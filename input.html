@@ -1,0 +1,45 @@
+{% block head %}
+<html>
+
+
+<title>Calculator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <h1 style="color:blue;">Calculator</h1>
+
+    <div class="form">
+        <form action="/math" method="POST">
+            <label for="operation">Choose a Mathematical Operation</label>
+
+<div>
+  <select id="operation" name="operation">
+    <option value="add">add</option>
+    <option value="subtract">subtract</option>
+    <option value="multiply">multiply</option>
+    <option value="divide">divide</option>
+  </select>
+</div>
+
+        <div>
+            <input type="text" name="num1" id="num1">   # Enter First Number
+        </div>
+
+
+         <div>
+            <input type="text" name="num2" id="num2">   #Enter Second Number
+          </div>
+
+
+         <div>
+            <input type="submit" value="Calculate">
+         </div>
+
+        </form>
+    </div>
+</div>
+</html>
+{% endblock %}
